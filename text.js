@@ -33,7 +33,7 @@ if (scope['TextEncoder'] && scope['TextDecoder']) {
  * @param {string=} utfLabel
  */
 function FastTextEncoder(utfLabel='utf-8') {
-  if (utfLabel !== 'utf-8') {
+  if (utfLabel.toLowerCase().replace('-', '') !== 'utf8') {
     throw new RangeError(
       `Failed to construct 'TextEncoder': The encoding label provided ('${utfLabel}') is invalid.`);
   }
